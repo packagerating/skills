@@ -64,6 +64,13 @@ out a specific fact worth their attention ("axios has more open advisories but s
 10x the download count of the alternative"), as long as it's a factual observation tied to the
 data, not a disguised verdict.
 
+This applies just as much when the "alternative" isn't another scored package but a language
+built-in (e.g. `String.prototype.padStart` instead of `left-pad`) — it's tempting to treat "just use
+the built-in" as obviously correct and slide into "so don't add this dependency," but that's still a
+verdict. Whether the convenience of a maintained package is worth one more dependency is exactly the
+kind of judgment call this skill leaves to the user; present the tradeoff (dependency weight and
+supply-chain surface vs. a few lines of code you'd otherwise own) and stop there.
+
 ### 5. Self-check for methodology drift (once per session)
 
 The first time you use this skill in a session, call `get_package` for `axios` (language

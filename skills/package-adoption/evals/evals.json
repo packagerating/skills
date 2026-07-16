@@ -1,0 +1,46 @@
+{
+  "skill_name": "package-adoption",
+  "evals": [
+    {
+      "id": 0,
+      "name": "moment-known-alternatives",
+      "prompt": "should I add moment to my project?",
+      "expected_output": "Identifies moment as a JS/npm date library, names 2-3 realistic alternatives (dayjs, date-fns, luxon) from its own knowledge, calls get_package for all of them, presents a comparison table with composite scores and six dimensions, and avoids issuing a recommend/avoid verdict.",
+      "files": [],
+      "assertions": [
+        "Called get_package for moment and at least two of its alternatives (e.g. dayjs, date-fns, luxon)",
+        "Response names at least two realistic moment alternatives (dayjs, date-fns, and/or luxon)",
+        "Response includes a markdown table comparing the candidate and alternatives",
+        "Response references all six scoring dimensions (liveness, community, security, dependency, versioning, dep-tree risk), not just the composite scores",
+        "Response does not issue a flat recommend/avoid verdict or apply a hardcoded score threshold"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "requests-vs-httpx-user-supplied",
+      "prompt": "is requests better than httpx for a new Python service?",
+      "expected_output": "Uses the user's own two named alternatives (requests, httpx) rather than inventing its own list, calls get_package with language: python for both, presents a comparison table, and frames the answer as tradeoffs rather than a verdict.",
+      "files": [],
+      "assertions": [
+        "Response evaluates requests and httpx (the user's own named packages), not a substituted pair",
+        "get_package was called with language: python for both packages",
+        "Response includes a markdown table comparing requests and httpx",
+        "Response references all six scoring dimensions, not just the composite scores",
+        "Response frames the answer as tradeoffs rather than declaring one package flatly 'better'"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "left-pad-obscure-no-alternatives",
+      "prompt": "I'm about to add left-pad as a dependency for a small utility, is that a bad idea?",
+      "expected_output": "Recognizes left-pad has no strong idiomatic alternatives, evaluates it alone with get_package rather than inventing filler alternatives, grounds any commentary in the live score data rather than parroting the 2016 left-pad incident from training data alone, and avoids a hardcoded verdict.",
+      "files": [],
+      "assertions": [
+        "Called get_package for left-pad with language: javascript",
+        "Response does not invent contrived/unjustified alternatives just to fill a comparison slot",
+        "Any risk commentary is tied to actual returned score/dimension numbers, not solely the 2016 npm unpublish incident from training data",
+        "Response does not issue a flat 'bad idea'/'fine' verdict"
+      ]
+    }
+  ]
+}
