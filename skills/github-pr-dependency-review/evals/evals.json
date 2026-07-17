@@ -1,0 +1,26 @@
+{
+  "skill_name": "github-pr-dependency-review",
+  "evals": [
+    {
+      "id": 0,
+      "name": "current-branch-mixed-changes",
+      "prompt": "check this PR's dependency changes",
+      "expected_output": "Resolves the PR from gh pr view (no PR named, currently on the update-date-lib branch of msoffredi/mcp-skill-eval-scratch), pulls gh pr diff filtered to package.json, identifies moment removed / dayjs added / axios bumped 1.5.0->1.6.2, scores dayjs and both axios versions via get_package, presents a no-verdict report with moment acknowledged but not scored.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "explicit-pr-version-bump",
+      "prompt": "review the dependency changes in msoffredi/mcp-skill-eval-scratch PR #1",
+      "expected_output": "Uses the explicitly named PR rather than gh pr view, shows a version-bump before/after comparison for axios (1.5.0 -> 1.6.2) with both versions looked up via get_package, no verdict issued.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "removed-and-replacement",
+      "prompt": "did this PR remove any dependencies, and is the replacement any good?",
+      "expected_output": "Correctly separates the removed dependency (moment, acknowledged by name, not scored) from the added dependency (dayjs, scored via get_package), presented without a recommend/avoid verdict despite the question's phrasing inviting one.",
+      "files": []
+    }
+  ]
+}
