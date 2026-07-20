@@ -1,0 +1,26 @@
+{
+  "skill_name": "packagerating-setup",
+  "evals": [
+    {
+      "id": 0,
+      "name": "add-packagerating-npm-only",
+      "prompt": "add packagerating to this repo",
+      "expected_output": "Detects package.json only, confirms with the user before writing, generates .github/workflows/audit-dependencies.yml with on: pull_request, permissions: pull-requests: write, and api-key: ${{ secrets.PACKAGERATING_API_KEY }}, asks about fail-on-* thresholds before writing, never commits/pushes, never asks for the raw API key value, points to packagerating.com/signup and gives the exact gh secret set command.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "setup-ci-python-only-implicit",
+      "prompt": "set up dependency scoring in CI for this project",
+      "expected_output": "Triggers despite no explicit mention of packagerating/audit-dependencies by name, detects requirements.txt only, generates .github/workflows/audit-dependencies-python.yml with the correct action reference (packagerating/audit-dependencies-python@v1), same thresholds/secret/no-commit behavior as eval 0.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "integrate-dual-ecosystem-existing-ci",
+      "prompt": "integrate packagerating.com's dependency scoring — we already have some CI set up",
+      "expected_output": "Detects both package.json and requirements.txt, writes both workflow files, correctly does NOT flag the pre-existing unrelated ci.yml as a conflicting packagerating workflow (since it doesn't reference packagerating/audit-dependencies), asks about thresholds for each ecosystem.",
+      "files": []
+    }
+  ]
+}
