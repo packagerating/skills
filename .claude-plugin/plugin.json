@@ -1,0 +1,10 @@
+{
+  "name": "packagerating",
+  "description": "Live npm/PyPI package health and risk scores from packagerating.com, right inside Claude Code — package adoption decisions, PR dependency review, and CI setup.",
+  "version": "0.1.0",
+  "author": { "name": "Aravel LLC" },
+  "homepage": "https://packagerating.com",
+  "repository": "https://github.com/packagerating/skills",
+  "license": "MIT",
+  "keywords": ["dependencies", "npm", "pypi", "security", "supply-chain-security", "package-management"]
+}

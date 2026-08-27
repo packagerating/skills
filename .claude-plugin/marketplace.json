@@ -1,0 +1,14 @@
+{
+  "name": "packagerating-skills",
+  "description": "Marketplace for the packagerating.com Claude Code plugin — live package health/risk scores for dependency decisions, PR review, and CI setup.",
+  "owner": { "name": "Aravel LLC" },
+  "plugins": [
+    {
+      "name": "packagerating",
+      "description": "Live npm/PyPI package health and risk scores from packagerating.com, right inside Claude Code — package adoption decisions, PR dependency review, and CI setup.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": { "name": "Aravel LLC" }
+    }
+  ]
+}
