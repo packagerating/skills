@@ -110,7 +110,8 @@ the same conversation.
 4. "`moment` scores notably lower on Liveness (20) — it's in maintenance mode, no new features,
    though it still gets security patches. packagerating's own reasoning for `moment` says: 'General
    score 58/100, driven by no commits in 214 days and an irregular release cadence.' `dayjs` and
-   `date-fns` both score well across the board — packagerating's reasoning for both reads 'Scores
-   well across all dimensions — no significant concerns found.' `dayjs` has a smaller bundle size
+   `date-fns` both score well across the board — packagerating's reasoning for `dayjs` reads
+   'Scores well across all dimensions (general 90/100) — no significant concerns found,' and
+   `date-fns`'s reads the same at (general 85/100). `dayjs` has a smaller bundle size
    if that matters for your project, `date-fns` has a more functional/tree-shakeable API. Your call
    based on what you need."

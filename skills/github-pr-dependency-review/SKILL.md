@@ -122,6 +122,6 @@ explicit request in the moment — not something this skill does on its own.
 "The axios bump takes `security` from 0 to 70 and drops the risk score from 84 to 60 — looks like it
 picks up fixes for whatever had audit findings open on 1.5.0. packagerating's own reasoning agrees:
 1.5.0 reads 'General score 37/100, driven by 2 high vulnerability findings,' while 1.6.2 reads
-'Scores well across all dimensions — no significant concerns found.'"
+'Scores well across all dimensions (general 52/100) — no significant concerns found.'"
 
 **Removed:** `moment`
