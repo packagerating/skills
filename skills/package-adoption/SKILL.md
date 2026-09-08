@@ -56,6 +56,14 @@ Versioning, Dep-tree risk). A table works well for 2-4 packages. For each dimens
 ground it in the actual numbers you got back — don't round scores into vague labels like "good" or
 "bad" without showing the number that led you there.
 
+Each `get_package` result also includes a `reasoning` field — a short, deterministic sentence from
+packagerating.com itself explaining what drove that package's score (e.g. "General score 58/100,
+driven by no commits in 214 days and only 2 contributors."). Include it under each package's row —
+it's another data point from the product's own analysis, not a signal you're being asked to
+interpret. Present it as-is; don't rephrase it into a stronger claim than it makes, and don't treat
+its presence or absence as itself a verdict (a package with no concerns gets a positive-sounding
+`reasoning` sentence too, not a blank).
+
 **Do not issue a recommend/avoid verdict or apply a hardcoded score threshold.** Different projects
 weigh these dimensions differently — a hobby project might not care that a package's `versioning`
 score is low, while a compliance-conscious team might care a great deal. Your job is to make the
@@ -100,6 +108,10 @@ the same conversation.
 | luxon | 79.2 | 80.1 | 83.0 | 85 | 70 | 88 | 82 | 75 | 90 |
 
 4. "`moment` scores notably lower on Liveness (20) — it's in maintenance mode, no new features,
-   though it still gets security patches. `dayjs` and `date-fns` both score well across the board;
-   `dayjs` has a smaller bundle size if that matters for your project, `date-fns` has a more
-   functional/tree-shakeable API. Your call based on what you need."
+   though it still gets security patches. packagerating's own reasoning for `moment` says: 'General
+   score 58/100, driven by no commits in 214 days and an irregular release cadence.' `dayjs` and
+   `date-fns` both score well across the board — packagerating's reasoning for `dayjs` reads
+   'Scores well across all dimensions (general 90/100) — no significant concerns found,' and
+   `date-fns`'s reads the same at (general 85/100). `dayjs` has a smaller bundle size
+   if that matters for your project, `date-fns` has a more functional/tree-shakeable API. Your call
+   based on what you need."

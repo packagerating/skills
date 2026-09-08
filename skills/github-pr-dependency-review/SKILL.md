@@ -62,7 +62,12 @@ package block the whole report.
 
 Same convention as the `package-adoption` skill: composite scores (General, Automation, Risk) plus
 all six dimensions (Liveness, Community, Security, Dependency, Versioning, Dep-tree risk), grounded
-in the actual numbers returned. Structure the report as:
+in the actual numbers returned. Each `get_package` result also includes a `reasoning` field — a
+short, deterministic sentence from packagerating.com itself explaining what drove that score.
+Include it alongside a package's numbers the same way you include the dimension scores: as another
+data point from the product's own analysis, presented as-is, not reinterpreted. For a version bump,
+if the old and new version's `reasoning` differ, that's often the clearest signal of what actually
+changed — surface both. Structure the report as:
 
 - **Added dependencies**: one row per package in a comparison table, same format `package-adoption`
   uses.
@@ -115,6 +120,8 @@ explicit request in the moment — not something this skill does on its own.
 | 1.6.2 | 52.0 | 60.0 | 70 | 65 |
 
 "The axios bump takes `security` from 0 to 70 and drops the risk score from 84 to 60 — looks like it
-picks up fixes for whatever had audit findings open on 1.5.0."
+picks up fixes for whatever had audit findings open on 1.5.0. packagerating's own reasoning agrees:
+1.5.0 reads 'General score 37/100, driven by 2 high vulnerability findings,' while 1.6.2 reads
+'Scores well across all dimensions (general 52/100) — no significant concerns found.'"
 
 **Removed:** `moment`

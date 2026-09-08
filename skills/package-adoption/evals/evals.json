@@ -12,6 +12,7 @@
         "Response names at least two realistic moment alternatives (dayjs, date-fns, and/or luxon)",
         "Response includes a markdown table comparing the candidate and alternatives",
         "Response references all six scoring dimensions (liveness, community, security, dependency, versioning, dep-tree risk), not just the composite scores",
+        "Response surfaces each package's reasoning field (packagerating's own explanation of what drove its score), not just the raw numbers",
         "Response does not issue a flat recommend/avoid verdict or apply a hardcoded score threshold"
       ]
     },
